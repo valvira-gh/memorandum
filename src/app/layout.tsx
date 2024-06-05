@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 
 import MainHeader from '@/components/main-header';
+import AddNewNote from '@/components/add-new-note';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
@@ -23,10 +24,15 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <header className="w-full h-[100px] bg-primary flex flex-col items-center">
+                <header className="w-full bg-primary flex items-center justify-center">
                     <MainHeader />
                 </header>
-                <main className="w-full h-full">{children}</main>
+                <div className="flex flex-col w-full items-center">
+                    <aside className="text-foreground ">
+                        <AddNewNote />
+                    </aside>
+                    <main className="w-full h-full">{children}</main>
+                </div>
             </body>
         </html>
     );
