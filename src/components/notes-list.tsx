@@ -9,14 +9,14 @@ import {
 const NotesList = () => {
     return (
         <div className="w-1/2">
-            {notes.map((note: Note) => (
-                <Accordion type="multiple" key={note.id}>
-                    <AccordionItem value={note.id}>
+            <Accordion type="multiple">
+                {notes.map((note: Note) => (
+                    <AccordionItem key={note.id} value={note.id}>
                         <AccordionTrigger>{note.title}</AccordionTrigger>
                         <AccordionContent>{note.content}</AccordionContent>
                     </AccordionItem>
-                </Accordion>
-            ))}
+                ))}
+            </Accordion>
         </div>
     );
 };
